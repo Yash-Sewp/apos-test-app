@@ -1,9 +1,3 @@
-# Kiichiro Toyota CMS for Toyota and Lexus
-
-## Overview
-This CMS is used for both Toyota and Lexus. It works off this component listing:
-(https://docs.google.com/spreadsheets/d/1vsXuAZma0XEaU2TIUWEulFilD3OYucDtIlLEmzQbLkI/edit?usp=sharing)
-
 ## Index
 * Local set up
 * During development
