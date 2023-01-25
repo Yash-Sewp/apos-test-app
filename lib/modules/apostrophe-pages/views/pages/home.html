@@ -1,8 +1,13 @@
 {% extends "layout.html" %}
 
 {% block main %}
-<div class="container page">
-	Nothing exists on this page
+<div class="container">
+	{{ apos.area(data.page, 'content', {
+		widgets: {
+			'hero-banner': {},
+      'case-studies-card': {},
+      'section-title': {}
+		}
+	}) }}
 </div>
-
 {% endblock %}

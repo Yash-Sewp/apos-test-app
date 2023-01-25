@@ -229,6 +229,8 @@ var apos = require('apostrophe')({
     'apostrophe-users-orderings': {
       extend: 'apostrophe-pieces-orderings',
     },
-
+    'hero-banner-widgets': {},
+    'case-studies-card-widgets': {},
+    'section-title-widgets': {}
   },
 });
