@@ -1,0 +1,28 @@
+//
+// Custom variables
+//
+
+//
+// Custom colours
+
+$site-offset-black: #212529;
+
+//
+// Custome Transition curves
+$easeInQuad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+$easeInSine: cubic-bezier(0.47, 0, 0.745, 0.715);
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+// Based off of https://www.freecodecamp.org/news/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862/
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 599px,
+	md: 600px,
+	lg: 900px,
+	xl: 1200px,
+	xxl: 1800px
+);

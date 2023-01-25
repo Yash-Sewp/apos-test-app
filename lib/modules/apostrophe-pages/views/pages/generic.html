@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="container page">
+	<h4>{{ data.page.title }}</h4>
+	{{ apos.area(data.page, 'content', {
+	widgets: {
+
+	}
+	}) }}
+</div>
+
+{% endblock %}

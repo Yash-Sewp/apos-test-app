@@ -1,0 +1,13 @@
+.spinner-g {
+	&--disabled {
+		.spinner-g__default {
+			display: none;
+		}
+		.spinner-g__loading {
+			display: inline;
+		}
+	}
+	&__loading {
+		display: none;
+	}
+}

@@ -1,0 +1,23 @@
+.swiper-arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 5;
+	cursor: pointer;
+	&__prev {
+		left: 10px;
+		@include media-breakpoint-up(md) {
+			left: 25px;
+		}
+	}
+	&__next {
+		right: 10px;
+		@include media-breakpoint-up(md) {
+			right: 25px;
+		}
+	}
+	&.swiper-button-disabled {
+		opacity: 0.4 !important;
+		cursor: auto;
+	}
+}

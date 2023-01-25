@@ -1,0 +1,32 @@
+image: node:14.16.0
+
+pipelines:
+  branches:
+    develop:
+      - step:
+          deployment: develop
+          services:
+            - docker
+          caches:
+            - docker
+          script:
+            - npm install -d
+            - npm run build
+            - node app apostrophe:generation --create-bundle=prod-bundle
+    master:
+      - step:
+          deployment: production
+          services:
+            - docker
+          caches:
+            - docker
+          script:
+
+
+options:
+  docker: true
+
+definitions:
+  services:
+    docker:
+      memory: 2048

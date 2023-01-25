@@ -1,0 +1,9 @@
+{
+	"verbose": true,
+	"watch": [
+		"lib/modules",
+		"app.js",
+		"views"
+	],
+	"ext": "js json less"
+}
