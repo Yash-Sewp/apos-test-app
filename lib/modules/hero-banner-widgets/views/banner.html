@@ -9,7 +9,9 @@
         <div class="hero-banner__subheading">{{ bannerData.subheading }}</div>
         
           {# {{ banner.buttons | dump }} #}
-        <a class="btn-standard btn-primary" href="#" role="button">Learn more</a>
+        {% for btn in bannerData.buttons %}
+          <a class="btn-standard btn-{{ btn.buttonStyle }}" href="{{ btn.buttonLink }}" role="button">{{ btn.buttonLabel }}</a>
+        {% endfor %}
       </div>
     </div>
   </div>
