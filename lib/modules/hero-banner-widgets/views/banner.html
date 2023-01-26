@@ -1,5 +1,16 @@
-<div class="container">
-	<div class="row">
-		This is banner widget
-	</div>
+{% set bannerData = data.widget %}
+
+<div class="row hero-banner">
+  <div class="col-12 p-0">
+    <div class="jumbotron hero-banner__container" style="background-image: url({{ apos.attachments.url(apos.images.first(data.widget.image)) }});">
+      <div class="hero-banner__content-container">
+        <h1 class="hero-banner__heading">{{ bannerData.heading }}</h1>
+
+        <div class="hero-banner__subheading">{{ bannerData.subheading }}</div>
+        
+          {# {{ banner.buttons | dump }} #}
+        <a class="btn-standard btn-primary" href="#" role="button">Learn more</a>
+      </div>
+    </div>
+  </div>
 </div>

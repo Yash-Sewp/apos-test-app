@@ -1,1 +1,11 @@
-{% include 'section-title-widgets.html' %}
+{% set sectionTitle = data.widget %}
+
+<div class="page-spacing">
+	<div class="row section-title">
+		<div class="col-12">
+      <div class="section-title__title">
+        {{ sectionTitle.heading }}
+      </div>
+		</div>
+	</div>
+</div>

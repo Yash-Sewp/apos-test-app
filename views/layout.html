@@ -12,6 +12,13 @@
 	{% endif %}
 {% endblock %}
 
+{% block startHead %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+{% endblock %}
+
+
 {% block extraHead %}
 	{% if data.piece %}
 	{% if data.piece.seoTitle %}
@@ -32,48 +39,55 @@
 
 {% block beforeMain %}
 	<header>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="/">
+        <img src="./images/logo.svg" alt="logo" />
+      </a> 
 
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav mr-auto">
-					
-					{% for tab in data.home._children %}
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-						<li class="nav-item dropdown {% if data.page and (apos.pages.isAncestorOf(tab, data.page) or tab._id == data.page._id) %}active{% endif %}">
-							<a class="nav-link {% if tab._children.length %}dropdown-toggle{% endif %}" href="{{ tab._url }}" id="navbarDropdownMenuLink" aria-haspopup="true" aria-expanded="false">
-								{{ tab.title }} 
-								{% if data.page and (apos.pages.isAncestorOf(tab, data.page) or tab._id == data.page._id) %}
-									<span class="sr-only">(current)</span>
-								{% endif %}
-							</a>
-							{% if tab._children.length %}
-								<ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
-									{% for child in tab._children %}
-										<li class="dropdown-submenu">
-											<a class="dropdown-item {% if child._children.length %}dropdown-toggle{% endif %}"  aria-haspopup="true" aria-expanded="false" href="{{ child._url }}">{{ child.title }}</a>
-											{% if child._children.length %}
-												<ul class="dropdown-menu bg-dark">
-													{% for subchild in child._children %}
-														<li><a class="dropdown-item" href="{{ subchild._url }}">{{ subchild.title }}</a></li>
-													{% endfor %}
-												</ul>
-											{% endif %}
-										</li>
-									{% endfor %}
-								</ul>
-							{% endif %}
-						</li>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          
+          {% for tab in data.home._children %}
 
-					{% endfor %}
+            <li class="nav-item dropdown {% if data.page and (apos.pages.isAncestorOf(tab, data.page) or tab._id == data.page._id) %}active{% endif %}">
+              <a class="nav-link {% if tab._children.length %}dropdown-toggle{% endif %}" href="{{ tab._url }}" id="navbarDropdownMenuLink" aria-haspopup="true" aria-expanded="false">
+                {{ tab.title }} 
+                {% if data.page and (apos.pages.isAncestorOf(tab, data.page) or tab._id == data.page._id) %}
+                  <span class="sr-only">(current)</span>
+                {% endif %}
+              </a>
+              {% if tab._children.length %}
+                <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                  {% for child in tab._children %}
+                    <li class="dropdown-submenu">
+                      <a class="dropdown-item {% if child._children.length %}dropdown-toggle{% endif %}"  aria-haspopup="true" aria-expanded="false" href="{{ child._url }}">{{ child.title }}</a>
+                      {% if child._children.length %}
+                        <ul class="dropdown-menu bg-dark">
+                          {% for subchild in child._children %}
+                            <li><a class="dropdown-item" href="{{ subchild._url }}">{{ subchild.title }}</a></li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
 
-				</ul>
-			</div>
-		</nav>
+          {% endfor %}
+
+        </ul>
+      </div>
+
+      <div class="navbar__btn-container d-none d-lg-block">
+        <a class="btn-standard btn-secondary">Let's talk</a>
+      </div>
+    </nav>
 	</header>
-	<br />
 {% endblock %}
 
 {% block main %}

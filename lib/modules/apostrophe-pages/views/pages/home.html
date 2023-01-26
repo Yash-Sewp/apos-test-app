@@ -1,13 +1,13 @@
 {% extends "layout.html" %}
 
 {% block main %}
-<div class="container">
-	{{ apos.area(data.page, 'content', {
-		widgets: {
-			'hero-banner': {},
+<div class="container-fluid">
+  {{ apos.area(data.page, 'content', {
+    widgets: {
+      'hero-banner': {},
       'case-studies-card': {},
       'section-title': {}
-		}
-	}) }}
+    }
+  }) }}
 </div>
 {% endblock %}

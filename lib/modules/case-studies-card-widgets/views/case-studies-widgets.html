@@ -1,1 +1,18 @@
-Case studies cards
+{% set cases = data.widget %}
+
+<div class="page-spacing">
+<div class="row case-studies">
+  {% for case in cases.caseStudies %}
+  <div class="col-12 col-lg-4">
+    <div class="card case-studies__card" style="background-image: url({{ apos.attachments.url(apos.images.first(case.image)) }})">
+      <div class="card-body case-studies__card-body">
+        <div class="case-studies__card-body-content">
+          <h5 class="card-title case-studies__card-title">{{ case.title }}</h5>
+          <p class="card-text case-studies__card-copy">{{ case.content.items[0].content }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+</div>
