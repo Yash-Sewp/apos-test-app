@@ -5,6 +5,16 @@
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;
+		margin-bottom: 30px;
+    transition: ease .3s;
+
+		@media (min-width: 992px) {
+			margin-bottom: 0;
+		}
+
+    &:hover {
+      transform: scale(1.1);
+    }
 	}
 
 	&__card-body {

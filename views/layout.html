@@ -18,25 +18,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 {% endblock %}
 
-
-{% block extraHead %}
-	{% if data.piece %}
-	{% if data.piece.seoTitle %}
-		{% set title = data.piece.seoTitle %}
-	{% else %}
-		{% set title = data.piece.title %}
-	{% endif %}
-	{% else %}
-	{% if data.page.seoTitle %}
-		{% set title = data.page.seoTitle %}
-	{% else %}
-		{% set title = data.page.title %}
-	{% endif %}
-	{% endif %}
- 
-	{% include "apostrophe-seo:view.html" %}
-{% endblock %}
-
 {% block beforeMain %}
 	<header>
     <nav class="navbar navbar-expand-lg">
@@ -84,7 +65,7 @@
       </div>
 
       <div class="navbar__btn-container d-none d-lg-block">
-        <a class="btn-standard btn-secondary">Let's talk</a>
+        <a href="{{ data.global.buttonLink }}" class="btn-standard btn-secondary">{{ data.global.buttonLabel }}</a>
       </div>
     </nav>
 	</header>
@@ -95,5 +76,18 @@
 {% endblock %}
 
 {% block afterMain %}
-		
+  <footer class="footer">
+    <div class="container-fluid">
+      <div class="page-spacing">
+        <div class="row">
+        <div class="col-12 text-center">
+          Added for some structure
+          <br />
+          <hr>
+          Fixed height
+        </div>
+      </div>
+      </div>
+    </div>
+  </footer>
 {% endblock %}

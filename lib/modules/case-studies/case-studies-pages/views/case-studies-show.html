@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% set piece = data.piece or data.page %}
+
+{% block main %}
+
+	<section class="banner">
+		{%- set image = apos.images.first(piece.featuredImage) -%}
+		<div class="d-flex justify-content-center align-items-center">
+			<div class="banner__image banner__image--case-study" style="background-image: url('{{ apos.attachments.url(image) }}');"></div>
+		</div>
+	</section>
+	
+{% endblock %}

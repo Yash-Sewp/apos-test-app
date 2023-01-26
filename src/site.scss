@@ -23,6 +23,12 @@ body {
   }
 }
 
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 // Navbar component
 .navbar {
 	background-color: $primary-color;
@@ -58,6 +64,14 @@ body {
   }
 }
 
+// Footer
+.footer {
+  background-color: $primary-color;
+  height: 300px;
+  margin-top: 40px;
+  padding: 30px 0;
+}
+
 // Buttons 
 .btn-standard {
   font-size: 14px;
@@ -78,5 +92,4 @@ body {
 .btn-secondary {
   background-color: #fff;
   color: $primary-color;
-
 }

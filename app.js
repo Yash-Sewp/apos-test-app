@@ -26,8 +26,6 @@ var moment = require('moment'),
 
 let allowedOrigin = [];
 
-
-
 //
 // Required variables
 //
@@ -85,23 +83,6 @@ if (
         process.env.AZURE_STORAGE_CONTAINER,
     };
   }
-}
-
-//
-// Setup Azure Application Insights
-//
-if (process.env.APP_INSIGHTS_KEY) {
-  appInsights
-    .setup(process.env.APP_INSIGHTS_KEY)
-    .setAutoDependencyCorrelation(true)
-    .setAutoCollectRequests(true)
-    .setAutoCollectPerformance(true)
-    .setAutoCollectExceptions(true)
-    .setAutoCollectDependencies(true)
-    .setAutoCollectConsole(true, true)
-    .setUseDiskRetryCaching(true)
-    .setSendLiveMetrics(false)
-    .start();
 }
 
 var apos = require('apostrophe')({
@@ -190,6 +171,12 @@ var apos = require('apostrophe')({
       openOnHomepageLoad: false,
       addGroups: [
         {
+          label: 'Pieces',
+          items: [
+            'case-studies'
+          ],
+        },
+        {
           label: 'Attachments and Pages',
           items: [
             'apostrophe-pages',
@@ -204,7 +191,7 @@ var apos = require('apostrophe')({
             'apostrophe-users',
             'apostrophe-global',
           ],
-        },
+        }
       ],
     },
     'apostrophe-caches': {},
